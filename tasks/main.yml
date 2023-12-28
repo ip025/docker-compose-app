@@ -2,10 +2,10 @@
 # tasks file for docker-compose-app
 
 - name: Manage working directory
-  ansible.builtin.import_tasks: workdir.yaml
+  ansible.builtin.import_tasks: workdir.yml
 
 - name: Copy files
-  ansible.builtin.import_tasks: files.yaml
+  ansible.builtin.import_tasks: files.yml
 
 - name: Manage the application
-  ansible.builtin.import_tasks: application.yaml
+  ansible.builtin.import_tasks: application.yml
