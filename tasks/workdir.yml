@@ -4,3 +4,10 @@
   ansible.builtin.file:
     state: directory
     name: "{{ workingdir }}"
+
+- name: Ensure additional folders are present
+  ansible.builtin.file:
+    state: directory
+    name: "{{workingdir}}/{{ item }}"
+  loop: "{{ additional_folders }}"
+  when: additional_folders is defined
