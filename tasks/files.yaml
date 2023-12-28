@@ -9,5 +9,5 @@
   ansible.builtin.copy:
     src: "{{ item.source }}"
     dest: "{{ item.destination }}"
-  loop: {{ additional_files }}
+  loop: "{{ additional_files }}"
   when: additional_files is defined
