@@ -1,0 +1,13 @@
+---
+
+- name: Ensure docker-compose file is present
+  ansible.builtin.copy:
+    src: "{{ local_compose_file }}"
+    dest: "{{ workingdir }}/docker-compose.yml"
+
+- name: Ensure additional files are present
+  ansible.builtin.copy:
+    src: "{{ item.source }}"
+    dest: "{{ item.destination }}"
+  loop: {{ additional_files }}
+  when: additional_files is defined

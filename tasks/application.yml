@@ -1,0 +1,6 @@
+---
+
+- name: Ensure stack is present
+  community.docker.docker_compose:
+    project_src: "{{ workingdir }}"
+    state: present

@@ -1,0 +1,6 @@
+---
+
+- name: Ensure the working directory is present
+  ansible.builtin.file:
+    state: directory
+    name: "{{ workingdir }}"

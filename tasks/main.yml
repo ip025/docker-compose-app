@@ -1,0 +1,11 @@
+---
+# tasks file for docker-compose-app
+
+- name: Manage working directory
+  ansible.builtin.import_tasks: workdir.yaml
+
+- name: Copy files
+  ansible.builtin.import_tasks: files.yaml
+
+- name: Manage the application
+  ansible.builtin.import_tasks: application.yaml
