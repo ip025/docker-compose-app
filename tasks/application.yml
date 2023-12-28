@@ -3,4 +3,9 @@
 - name: Ensure stack is present
   community.docker.docker_compose:
     project_src: "{{ workingdir }}"
-    state: present
+    state: "{{ app_state | default('present') }}"
+    restarted: "{{ app_restarted | default('False') }}"
+    pull: true
+    remove_images: "all"
+    remove_orphans: true
+    remove_volumes: true
